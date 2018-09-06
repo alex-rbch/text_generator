@@ -10,7 +10,6 @@ class Model:
         try:
             open('maps.pickle')
         except IOError:
-            print(10)
             maps = {}
             with open('maps.pickle', 'wb') as handle:
                 pickle.dump(maps, handle, protocol=pickle.HIGHEST_PROTOCOL)
@@ -68,6 +67,7 @@ print("Insert the number of expected operations:")
 number_of_operations = int(input())
 print("For education of model type 0 and filename")
 print("In order to generate your own text, type 1, number of words and first word")
+print("In case of not having suitable words model will generate text of smaller length")
 
 for i in range(number_of_operations):
     type_of_operation = int(input())
